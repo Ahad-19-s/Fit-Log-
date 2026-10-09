@@ -1,0 +1,20 @@
+import type { Workout } from "@/types/workout";
+
+const API_URL = "https://api.abcz.workers.dev/api/fitlog";
+
+export async function fetchWorkouts(): Promise<Workout[]> {
+  const response = await fetch(API_URL, { cache: "no-store" });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch workouts");
+  }
+
+  const data = await response.json();
+  const workouts = Array.isArray(data) ? data : data.data;
+
+  if (!Array.isArray(workouts)) {
+    throw new Error("Invalid workout API response");
+  }
+
+  return workouts;
+}
