@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { fetchWorkouts } from "@/lib/fetchWorkouts";
 import type { Workout } from "@/types/workout";
-import WorkoutActions from "@/components/Library/WorkOutActions";
+import WorkoutActions from "@/components/Library/WorkoutActions";
 import Image from "next/image";
 
 export default function WorkoutPage() {

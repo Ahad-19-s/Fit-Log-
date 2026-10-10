@@ -1,5 +1,5 @@
 import type { Workout } from "@/types/workout";
-import WorkoutCard from "./WorkOutCard";
+import WorkoutCard from "./WorkoutCard";
 
 interface WorkOutListProps {
   workouts: Workout[];

@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { fetchWorkouts } from "@/lib/fetchWorkouts";
-import WorkOutList from "./WorkOutList";
+import WorkOutList from "./WorkoutList";
 import Link from "next/link";
 
 async function WorkoutContent() {

@@ -9,14 +9,11 @@ interface WorkoutCardProps {
 export default function WorkoutCard({ workout }: WorkoutCardProps) {
   return (
     <Link
-      href={`/workOuts/${workout.id}`}
+      href={`/workouts/${workout.id}`}
       className="group flex h-full flex-col overflow-hidden rounded-xl border border-white/10 bg-[#181818] transition duration-300 hover:-translate-y-1 hover:border-lime-400/50 hover:bg-[#1d1d1d]"
     >
       {/* Workout Image */}
-      <div
-        className="relative h-52 overflow-hidden bg-[#252525]"
-        style={{ position: "relative" }}
-      >
+      <div className="relative h-52 overflow-hidden bg-[#252525]">
         {workout.image ? (
           <Image
             src={workout.image}
