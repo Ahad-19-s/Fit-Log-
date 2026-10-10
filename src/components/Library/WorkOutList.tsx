@@ -6,7 +6,7 @@ interface WorkOutListProps {
 }
 
 export default function WorkOutList({ workouts }: WorkOutListProps) {
-  if (workouts.length === 0) {
+  if (!workouts || workouts.length === 0) {
     return (
       <div className="rounded-xl border border-white/10 bg-[#181818] px-5 py-16 text-center">
         <p className="text-lg font-bold text-white">No workouts found</p>
