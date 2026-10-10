@@ -48,6 +48,6 @@ npm run build
 npm run start
 
 🔗 Project Links
-Live Demo: [Add your deployed website URL here]
+Live Demo: https://my-fit-app-7pke.vercel.app/
 
 GitHub Repository: https://github.com/Ahad-19-s/Fit-Log-.git
