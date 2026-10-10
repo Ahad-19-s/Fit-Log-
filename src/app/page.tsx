@@ -1,13 +1,11 @@
 import HeroSection from "@/components/Hero-section";
 import LibrarySection from "@/components/Library/Librarysection";
-import Footer from "@/components/shared/Footer";
+
 export default function HomePage() {
   return (
-    <main>
+    <main className="min-h-screen overflow-hidden bg-[#101010] text-white">
       <HeroSection />
-
       <LibrarySection />
-      <Footer />
     </main>
   );
 }

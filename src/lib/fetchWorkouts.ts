@@ -1,14 +1,13 @@
+
 import type { Workout } from "@/types/workout";
 
-const API_URL ="https://api.abcz.workers.dev/api/fitlog";
+const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  "https://api.abcz.workers.dev/api/fitlog";
 
 export async function fetchWorkouts(): Promise<Workout[]> {
-  if (!API_URL) {
-    throw new Error("Workout API URL is missing in .env.local");
-  }
-
   const response = await fetch(API_URL, {
-    next: { revalidate: 60 },
+    cache: "no-store",
   });
 
   if (!response.ok) {
@@ -17,7 +16,6 @@ export async function fetchWorkouts(): Promise<Workout[]> {
 
   const result = await response.json();
 
-  // API সরাসরি array অথবা object-এর ভেতরে array দিতে পারে।
   const workouts = Array.isArray(result)
     ? result
     : result.data ?? result.workouts ?? result.results;
