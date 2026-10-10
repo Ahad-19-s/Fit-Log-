@@ -11,6 +11,7 @@ interface PlanContextType {
   addToSaved: (workout: Workout) => void;
   removeFromToday: (id: number) => void;
   removeFromSaved: (id: number) => void;
+  markDone: (id: number) => void;
 }
 
 const PlanContext = createContext<PlanContextType | null>(null);
@@ -44,16 +45,25 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
   };
 
   const addToSaved = (workout: Workout) => {
-    setSavedPlan((prev) => [...prev, workout]);
+    setSavedPlan((prev) =>
+      prev.some((w) => w.id === workout.id) ? prev : [...prev, workout],
+    );
     toast.info("Saved for later");
   };
 
   const removeFromToday = (id: number) => {
     setTodayPlan((prev) => prev.filter((w) => w.id !== id));
+    toast.error("Removed from today's plan");
   };
 
   const removeFromSaved = (id: number) => {
     setSavedPlan((prev) => prev.filter((w) => w.id !== id));
+    toast.error("Removed from saved");
+  };
+
+  const markDone = (id: number) => {
+    toast.success("Workout marked as done");
+    // চাইলে এখানে done workouts আলাদা state এ রাখতে পারো
   };
 
   return (
@@ -65,6 +75,7 @@ export function PlanProvider({ children }: { children: React.ReactNode }) {
         addToSaved,
         removeFromToday,
         removeFromSaved,
+        markDone,
       }}
     >
       {children}

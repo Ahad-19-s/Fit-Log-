@@ -1,6 +1,6 @@
 import Navbar from "@/components/shared/Navbar";
 import { Suspense } from "react";
-import { PlanProvider } from "@/context/contexpage";
+import { PlanProvider } from "@/context/ContexPage";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "@/app/globals.css";
@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="min-h-screen bg-[#0b0d0b] text-white">
         <PlanProvider>
           <Suspense fallback={<div>Loading navbar...</div>}>

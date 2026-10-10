@@ -1,6 +1,6 @@
 "use client";
 
-import { usePlan } from "@/context/contexpage";
+import { usePlan } from "@/context/ContexPage";
 import type { Workout } from "@/types/workout";
 
 export default function WorkoutActions({ workout }: { workout: Workout }) {

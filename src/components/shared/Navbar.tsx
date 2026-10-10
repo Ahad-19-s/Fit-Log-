@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { useState } from "react";
-import { usePlan } from "@/context/contexpage";
+import { usePlan } from "@/context/ContexPage";
 
 export default function Navbar() {
   const pathname = usePathname();
