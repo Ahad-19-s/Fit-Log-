@@ -49,5 +49,8 @@ npm run start
 
 🔗 Project Links
 Live Demo: https://my-fit-app-7pke.vercel.app/
+https://vercel.com/watermelon9/my-fit-app
+
+
 
 GitHub Repository: https://github.com/Ahad-19-s/Fit-Log-.git
